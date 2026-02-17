@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar 5 – Supply & Demand Step-by-Step Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #D2B48C;
+        color: #000;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .slide {
+        background: #E8D7C3;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        flex-grow: 1;
+        display: none;
+    }
+
+    .slide.active {
+        display: block;
+        animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 18px;
+        color: #2C1810;
+        border-bottom: 4px solid #8B4513;
+        padding-bottom: 10px;
+    }
+
+    h3 { font-size: 1.2em; margin: 16px 0 8px 0; color: #4A2511; }
+
+    .question-box {
+        background: #FFF8DC;
+        border-left: 5px solid #8B4513;
+        padding: 18px;
+        margin: 16px 0;
+        border-radius: 8px;
+        font-size: 1.05em;
+    }
+
+    .question-box strong { color: #8B4513; }
+
+    .steps-box {
+        background: #F5E6D3;
+        border-left: 5px solid #D2691E;
+        padding: 18px;
+        margin: 14px 0;
+        border-radius: 8px;
+    }
+
+    .steps-box h3 { margin-top: 0; color: #D2691E; }
+
+    .step {
+        background: white;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin: 10px 0;
+        border-left: 4px solid #CD853F;
+        font-size: 1em;
+    }
+
+    .step-number {
+        display: inline-block;
+        background: #8B4513;
+        color: white;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        line-height: 28px;
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 0.9em;
+    }
+
+    .answer-toggle {
+        background: #8B4513;
+        color: white;
+        border: none;
+        padding: 11px 22px;
+        font-size: 1em;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 10px 0;
+        transition: all 0.3s;
+        width: 100%;
+        text-align: left;
+    }
+
+    .answer-toggle:hover { background: #A0522D; transform: translateX(3px); }
+
+    .answer-content {
+        display: none;
+        background: #D4EDDA;
+        border: 2px solid #28A745;
+        padding: 16px;
+        margin: 5px 0 14px 0;
+        border-radius: 8px;
+        color: #155724;
+        font-size: 1em;
+        line-height: 1.7;
+    }
+
+    .answer-content.show { display: block; animation: fadeIn 0.3s; }
+
+    .highlight { background: #FFD700; padding: 2px 5px; border-radius: 3px; font-weight: bold; }
+
+    .simple-box {
+        background: #FFFACD;
+        padding: 14px;
+        margin: 12px 0;
+        border-radius: 8px;
+        border-left: 4px solid #8B4513;
+        font-size: 0.98em;
+    }
+
+    .diagram-box {
+        background: white;
+        border: 3px solid #CD853F;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 16px 0;
+        text-align: center;
+    }
+
+    svg text { font-family: 'Segoe UI', sans-serif; }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 28px;
+        padding-top: 18px;
+        border-top: 2px solid #8B4513;
+    }
+
+    .nav-btn {
+        background: #8B4513;
+        color: white;
+        border: none;
+        padding: 13px 28px;
+        font-size: 1.1em;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .nav-btn:hover:not(:disabled) { background: #A0522D; transform: scale(1.05); }
+    .nav-btn:disabled { background: #A9A9A9; cursor: not-allowed; }
+
+    .progress { text-align: center; font-size: 1.2em; color: #2C1810; font-weight: bold; }
+
+    .warning-box {
+        background: #FFE4B5;
+        border: 2px solid #CD853F;
+        border-radius: 8px;
+        padding: 14px;
+        margin: 12px 0;
+        font-size: 0.98em;
+    }
+
+    .q-label {
+        display: inline-block;
+        background: #8B4513;
+        color: white;
+        padding: 3px 12px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.95em;
+        margin-bottom: 8px;
+    }
+</style>
+```
+
+</head>
+<body>
+<div class="container">
+
+<!-- SLIDE 1: Demand Questions 1-4 -->
+
+<div class="slide active">
+    <h1>📉 Section 1 – Factors Affecting DEMAND</h1>
+
+```
+<div class="simple-box">
+    <strong>🔑 Key Rule Before You Start:</strong><br>
+    There are TWO types of change on a demand diagram:<br>
+    • <span class="highlight">Movement ALONG the curve</span> = price changes (stay on same curve)<br>
+    • <span class="highlight">SHIFT of the whole curve</span> = anything else (income, taste, substitutes)
+</div>
+
+<!-- Demand Diagram -->
+<div class="diagram-box">
+    <svg width="420" height="280" viewBox="0 0 420 280">
+        <!-- Axes -->
+        <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+        <line x1="50" y1="250" x2="400" y2="250" stroke="#333" stroke-width="2"/>
+        <!-- Axis labels -->
+        <text x="15" y="140" font-size="13" fill="#333" transform="rotate(-90,15,140)">Price</text>
+        <text x="360" y="268" font-size="13" fill="#333">Quantity</text>
+        <!-- Price lines -->
+        <line x1="50" y1="90" x2="390" y2="90" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <line x1="50" y1="170" x2="390" y2="170" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <text x="30" y="94" font-size="12" fill="#555">P2</text>
+        <text x="30" y="174" font-size="12" fill="#555">P1</text>
+        <!-- Quantity lines -->
+        <line x1="140" y1="250" x2="140" y2="20" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <line x1="230" y1="250" x2="230" y2="20" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <line x1="320" y1="250" x2="320" y2="20" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <text x="133" y="265" font-size="12" fill="#555">Q1</text>
+        <text x="223" y="265" font-size="12" fill="#555">Q2</text>
+        <text x="313" y="265" font-size="12" fill="#555">Q3</text>
+        <!-- D1 curve -->
+        <line x1="100" y1="60" x2="175" y2="250" stroke="#1a5276" stroke-width="2.5"/>
+        <text x="108" y="55" font-size="13" fill="#1a5276" font-weight="bold">D1</text>
+        <!-- D2 curve -->
+        <line x1="190" y1="60" x2="265" y2="250" stroke="#1a5276" stroke-width="2.5"/>
+        <text x="198" y="55" font-size="13" fill="#1a5276" font-weight="bold">D2</text>
+        <!-- D3 curve -->
+        <line x1="280" y1="60" x2="355" y2="250" stroke="#1a5276" stroke-width="2.5"/>
+        <text x="288" y="55" font-size="13" fill="#1a5276" font-weight="bold">D3</text>
+        <!-- Points D,E,F on P2 - mathematically calculated -->
+        <circle cx="112" cy="90" r="5" fill="#c0392b"/>
+        <text x="97" y="83" font-size="12" fill="#c0392b" font-weight="bold">D</text>
+        <circle cx="202" cy="90" r="5" fill="#c0392b"/>
+        <text x="205" y="83" font-size="12" fill="#c0392b" font-weight="bold">E</text>
+        <circle cx="292" cy="90" r="5" fill="#c0392b"/>
+        <text x="295" y="83" font-size="12" fill="#c0392b" font-weight="bold">F</text>
+        <!-- Points A,B,C on P1 - mathematically calculated -->
+        <circle cx="143" cy="170" r="5" fill="#c0392b"/>
+        <text x="128" y="182" font-size="12" fill="#c0392b" font-weight="bold">A</text>
+        <circle cx="233" cy="170" r="5" fill="#c0392b"/>
+        <text x="236" y="182" font-size="12" fill="#c0392b" font-weight="bold">B</text>
+        <circle cx="323" cy="170" r="5" fill="#c0392b"/>
+        <text x="326" y="182" font-size="12" fill="#c0392b" font-weight="bold">C</text>
+    </svg>
+    <p style="font-size:0.9em; color:#555; margin-top:5px;">UK Beef Market – Demand Diagram</p>
+</div>
+
+<!-- Q1 -->
+<div class="question-box">
+    <span class="q-label">Question 1</span><br>
+    Starting at Point E, the price falls from P2 to P1. Which new point do we move to?
+</div>
+<div class="steps-box">
+    <h3>🪜 How to Answer This:</h3>
+    <div class="step"><span class="step-number">1</span> Ask yourself: <em>What is changing here?</em> → The PRICE is changing</div>
+    <div class="step"><span class="step-number">2</span> A price change = movement ALONG the curve. The curve does NOT shift.</div>
+    <div class="step"><span class="step-number">3</span> We stay on D2. Price falls from P2 to P1. Find where D2 meets P1.</div>
+    <div class="step"><span class="step-number">4</span> That is Point B!</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Sample Answer – Q1</button>
+<div class="answer-content">
+    <strong>Answer:</strong> We move to Point <strong>B</strong>.<br><br>
+    <strong>Explanation:</strong> A falling price does NOT shift the demand curve. We simply move along the existing D2 curve. At price P1 on curve D2, the point is B. The demand curve stays exactly where it is – only the price and quantity change.
+</div>
+
+<!-- Q2 -->
+<div class="question-box">
+    <span class="q-label">Question 2</span><br>
+    Government campaign says eating beef reduces cancer risk. Market was at Point B on D2. What effect does this have?
+</div>
+<div class="steps-box">
+    <h3>🪜 How to Answer This:</h3>
+    <div class="step"><span class="step-number">1</span> Ask yourself: <em>What is changing?</em> → Consumer TASTES/PREFERENCES (not price)</div>
+    <div class="step"><span class="step-number">2</span> Non-price change = the whole curve SHIFTS</div>
+    <div class="step"><span class="step-number">3</span> People want MORE beef at every price → demand increases → curve shifts RIGHT</div>
+    <div class="step"><span class="step-number">4</span> D2 shifts to D3. At same price P1, we move from Point B to Point C.</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Sample Answer – Q2</button>
+<div class="answer-content">
+    <strong>Answer:</strong> The demand curve shifts right from D2 to D3, moving from Point B to Point <strong>C</strong>.<br><br>
+    <strong>Explanation:</strong> The campaign changes people's tastes/preferences – they now WANT more beef. This is not a price change, so the entire curve shifts to the right (an increase in demand). At the same price P1, the new point is C on curve D3.
+</div>
+
+<!-- Q3 -->
+<div class="question-box">
+    <span class="q-label">Question 3</span><br>
+    Swine flu causes mass slaughter of UK pigs (not for consumption). Demand is at D2. What happens to demand for beef?
+</div>
+<div class="steps-box">
+    <h3>🪜 How to Answer This:</h3>
+    <div class="step"><span class="step-number">1</span> Ask: <em>What is the link between pigs and beef?</em> → Pork is a SUBSTITUTE for beef</div>
+    <div class="step"><span class="step-number">2</span> Fewer pigs → less pork supply → pork price RISES</div>
+    <div class="step"><span class="step-number">3</span> When substitute (pork) gets more expensive → people buy MORE beef instead</div>
+    <div class="step"><span class="step-number">4</span> More demand for beef → curve shifts RIGHT → D2 to D3</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Sample Answer – Q3</button>
+<div class="answer-content">
+    <strong>Answer:</strong> The demand curve for beef shifts right from D2 to D3.<br><br>
+    <strong>Explanation:</strong> Swine flu reduces pork supply → pork price rises. Since pork is a <strong>substitute</strong> for beef, when pork becomes more expensive, consumers switch to beef. This increases demand for beef, shifting the demand curve rightward to D3.
+    <br><br><strong>Key word:</strong> <em>Substitute goods</em> = products that can replace each other (e.g. pork & beef, butter & margarine).
+</div>
+
+<!-- Q4 -->
+<div class="question-box">
+    <span class="q-label">Question 4</span><br>
+    Government raises income tax. Market was at Point B. What happens to demand for beef? Where does the market move?
+</div>
+<div class="steps-box">
+    <h3>🪜 How to Answer This:</h3>
+    <div class="step"><span class="step-number">1</span> Ask: <em>What is changing?</em> → Consumer INCOME (less money after tax)</div>
+    <div class="step"><span class="step-number">2</span> Less income = non-price change = demand curve SHIFTS</div>
+    <div class="step"><span class="step-number">3</span> Ask: <em>Is beef a normal good or inferior good?</em> This determines direction!</div>
+    <div class="step"><span class="step-number">4</span> Normal good (e.g. fillet steak) → less income → less demand → curve shifts LEFT → B to A</div>
+    <div class="step"><span class="step-number">5</span> Inferior good (e.g. cheap mince) → less income → MORE demand → curve shifts RIGHT → B to C</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Sample Answer – Q4</button>
+<div class="answer-content">
+    <strong>Answer:</strong> It depends on whether beef is a normal or inferior good!<br><br>
+    • <strong>If beef is a normal good</strong> (e.g. expensive fillet steak): Higher tax = less income = less demand for beef. Curve shifts LEFT from D2 to D1. Market moves from B to <strong>A</strong>.<br><br>
+    • <strong>If beef is an inferior good</strong> (e.g. cheap mince): Higher tax = less income = people buy MORE cheap beef. Curve shifts RIGHT from D2 to D3. Market moves from B to <strong>C</strong>.<br><br>
+    <strong>Key words:</strong> <em>Normal good</em> = demand rises with income. <em>Inferior good</em> = demand falls when income rises.
+</div>
+```
+
+</div>
+
+<!-- SLIDE 2: Supply Questions 1-4 -->
+
+<div class="slide">
+    <h1>📈 Section 2 – Factors Affecting SUPPLY</h1>
+
+```
+<div class="simple-box">
+    <strong>🔑 Key Rule Before You Start:</strong><br>
+    Same logic as demand but for the SUPPLY side:<br>
+    • <span class="highlight">Movement ALONG the curve</span> = price of the good changes<br>
+    • <span class="highlight">SHIFT of the whole curve</span> = costs, taxes, technology, weather, etc.
+</div>
+
+<!-- Supply Diagram -->
+<div class="diagram-box">
+    <svg width="420" height="280" viewBox="0 0 420 280">
+        <!-- Axes -->
+        <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+        <line x1="50" y1="250" x2="400" y2="250" stroke="#333" stroke-width="2"/>
+        <text x="15" y="140" font-size="13" fill="#333" transform="rotate(-90,15,140)">Price</text>
+        <text x="360" y="268" font-size="13" fill="#333">Quantity</text>
+        <!-- Price lines -->
+        <line x1="50" y1="90" x2="390" y2="90" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <line x1="50" y1="170" x2="390" y2="170" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <text x="30" y="94" font-size="12" fill="#555">P2</text>
+        <text x="30" y="174" font-size="12" fill="#555">P1</text>
+        <!-- Quantity lines -->
+        <line x1="140" y1="250" x2="140" y2="20" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <line x1="230" y1="250" x2="230" y2="20" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <line x1="320" y1="250" x2="320" y2="20" stroke="#999" stroke-width="1" stroke-dasharray="5,4"/>
+        <text x="133" y="265" font-size="12" fill="#555">Q1</text>
+        <text x="223" y="265" font-size="12" fill="#555">Q2</text>
+        <text x="313" y="265" font-size="12" fill="#555">Q3</text>
+        <!-- S1 curve (leftmost) -->
+        <line x1="95" y1="250" x2="205" y2="20" stroke="#1a5276" stroke-width="2.5"/>
+        <text x="200" y="18" font-size="13" fill="#1a5276" font-weight="bold">S1</text>
+        <!-- S2 curve (middle) -->
+        <line x1="185" y1="250" x2="295" y2="20" stroke="#1a5276" stroke-width="2.5"/>
+        <text x="290" y="18" font-size="13" fill="#1a5276" font-weight="bold">S2</text>
+        <!-- S3 curve (rightmost) -->
+        <line x1="275" y1="250" x2="385" y2="20" stroke="#1a5276" stroke-width="2.5"/>
+        <text x="375" y="18" font-size="13" fill="#1a5276" font-weight="bold">S3</text>
+        <!-- Points D,E,F on P2 - mathematically calculated -->
+        <circle cx="172" cy="90" r="5" fill="#c0392b"/>
+        <text x="155" y="83" font-size="12" fill="#c0392b" font-weight="bold">D</text>
+        <circle cx="262" cy="90" r="5" fill="#c0392b"/>
+        <text x="265" y="83" font-size="12" fill="#c0392b" font-weight="bold">E</text>
+        <circle cx="352" cy="90" r="5" fill="#c0392b"/>
+        <text x="355" y="83" font-size="12" fill="#c0392b" font-weight="bold">F</text>
+        <!-- Points A,B,C on P1 - mathematically calculated -->
+        <circle cx="133" cy="170" r="5" fill="#c0392b"/>
+        <text x="117" y="183" font-size="12" fill="#c0392b" font-weight="bold">A</text>
+        <circle cx="223" cy="170" r="5" fill="#c0392b"/>
+        <text x="226" y="183" font-size="12" fill="#c0392b" font-weight="bold">B</text>
+        <circle cx="313" cy="170" r="5" fill="#c0392b"/>
+        <text x="316" y="183" font-size="12" fill="#c0392b" font-weight="bold">C</text>
+    </svg>
+    <p style="font-size:0.9em; color:#555; margin-top:5px;">UK Beef Market – Supply Diagram</p>
+</div>
+
+<!-- Q1 -->
+<div class="question-box">
+    <span class="q-label">Question 1</span><br>
+    Which movement illustrates an INCREASE in supply?<br>
+    (a) B to A &nbsp;&nbsp; (b) B to C &nbsp;&nbsp; (c) B to D &nbsp;&nbsp; (d) B to E
+</div>
+<div class="steps-box">
+    <h3>🪜 How to Answer This:</h3>
+    <div class="step"><span class="step-number">1</span> An INCREASE in supply means suppliers provide MORE at every price level</div>
+    <div class="step"><span class="step-number">2</span> More supply = the supply curve shifts to the RIGHT</div>
+    <div class="step"><span class="step-number">3</span> Look at the diagram - moving right at the same price means more quantity</div>
+    <div class="step"><span class="step-number">4</span> B is on S2. Moving RIGHT at the same price P1 takes us to C on S3</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Sample Answer – Q1</button>
+<div class="answer-content">
+    <strong>Answer: (b) B to C</strong><br><br>
+    <strong>Explanation:</strong> An increase in supply means the supply curve shifts to the RIGHT (from S2 to S3). At the same price P1, we can now supply MORE beef – moving from Point B to Point C. More quantity is supplied at the same price = increase in supply.
+</div>
+
+<!-- Q2 -->
+<div class="question-box">
+    <span class="q-label">Question 2</span><br>
+    Supply is at S2, market at Point E. Government imposes a £100 tax on every animal sold for beef. What happens?
+</div>
+<div class="steps-box">
+    <h3>🪜 How to Answer This:</h3>
+    <div class="step"><span class="step-number">1</span> A tax is an EXTRA cost for farmers → it increases their costs of production</div>
+    <div class="step"><span class="step-number">2</span> Higher costs = suppliers produce LESS at every price → supply DECREASES</div>
+    <div class="step"><span class="step-number">3</span> Decrease in supply = curve shifts LEFT (from S2 to S1)</div>
+    <div class="step"><span class="step-number">4</span> At the same price P2, we move from Point E to Point D</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Sample Answer – Q2</button>
+<div class="answer-content">
+    <strong>Answer:</strong> Supply shifts left from S2 to S1, moving from Point E to Point <strong>D</strong>.<br><br>
+    <strong>Explanation:</strong> The £100 tax increases the cost of production for farmers. Higher costs mean farmers are willing to supply LESS beef at every price level. This shifts the entire supply curve to the left. At price P2, the market moves from E to D.
+</div>
+
+<!-- Q3 -->
+<div class="question-box">
+    <span class="q-label">Question 3</span><br>
+    Give THREE examples of changes that reduce beef supply (shift left). Would a fall in beef price also shift the supply curve?
+</div>
+<div class="steps-box">
+    <h3>🪜 How to Answer This:</h3>
+    <div class="step"><span class="step-number">1</span> Think about what makes it HARDER or MORE EXPENSIVE to produce beef</div>
+    <div class="step"><span class="step-number">2</span> Any increase in costs or reduction in ability to produce = supply shifts LEFT</div>
+    <div class="step"><span class="step-number">3</span> For the price question: ask yourself - is a price change a SHIFT or a MOVEMENT?</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Sample Answer – Q3</button>
+<div class="answer-content">
+    <strong>Three examples that shift supply LEFT:</strong><br>
+    1. <strong>Rise in production costs</strong> – e.g. animal feed gets more expensive<br>
+    2. <strong>Unfavourable weather</strong> – e.g. drought destroys grass for cattle<br>
+    3. <strong>Changes in prices of related goods</strong> – e.g. if lamb prices rise, farmers switch to sheep instead<br><br>
+    <strong>Would a fall in beef price shift the supply curve?</strong><br>
+    <strong>NO!</strong> A price change causes a MOVEMENT along the supply curve – not a shift. The curve itself does not move. Farmers simply produce less at the lower price (moving down the same curve).
+</div>
+
+<!-- Q4 -->
+<div class="question-box">
+    <span class="q-label">Question 4</span><br>
+    Supply is at S2. The National Beef Association runs a highly successful advertising campaign. What effect on supply?
+</div>
+<div class="steps-box">
+    <h3>🪜 How to Answer This:</h3>
+    <div class="step"><span class="step-number">1</span> Ask: <em>Who does advertising affect?</em> → It affects CONSUMERS (buyers), not producers</div>
+    <div class="step"><span class="step-number">2</span> Advertising changes what people WANT to buy → it affects DEMAND</div>
+    <div class="step"><span class="step-number">3</span> Supply = what PRODUCERS are willing to sell. Advertising does not change this!</div>
+    <div class="step"><span class="step-number">4</span> Therefore supply stays the SAME. The supply curve does not move.</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Sample Answer – Q4</button>
+<div class="answer-content">
+    <strong>Answer:</strong> Supply remains <strong>unchanged</strong>.<br><br>
+    <strong>Explanation:</strong> Advertising affects DEMAND, not supply. The campaign might make consumers want more beef (shifting demand right), but it does NOT change how much farmers are willing and able to supply. The supply curve stays at S2. This is a very common trick question – always ask yourself: does this change affect BUYERS or SELLERS?
+</div>
+```
+
+</div>
+
+<!-- SLIDE 3: Ukraine War Data Exercise -->
+
+<div class="slide">
+    <h1>🌍 Section 3 – Real World Data: Ukraine War & Prices</h1>
+
+```
+<div class="simple-box">
+    <strong>📊 The Exercise:</strong> Look at price data for Natural Gas, Rapeseed Oil, and Sunflower Oil from 2020 to present. Identify when big price swings happened and explain WHY using supply & demand.
+</div>
+
+<div class="warning-box">
+    <strong>⚠️ Before You Look at the Answer:</strong> Try to think about what happened in 2022 and how it affected Europe's energy and food supplies. What major event happened in February 2022?
+</div>
+
+<!-- Natural Gas Chart -->
+<div class="diagram-box">
+    <h3 style="color:#8B4513; margin-bottom:10px;">📊 Natural Gas, Europe ($/mmbtu) – 2021 to 2026</h3>
+    <svg width="100%" height="200" viewBox="0 0 560 200" preserveAspectRatio="xMidYMid meet">
+        <!-- Axes -->
+        <line x1="50" y1="10" x2="50" y2="165" stroke="#333" stroke-width="2"/>
+        <line x1="50" y1="165" x2="545" y2="165" stroke="#333" stroke-width="2"/>
+        <!-- Y axis labels -->
+        <text x="5" y="170" font-size="10" fill="#555">0</text>
+        <text x="5" y="130" font-size="10" fill="#555">20</text>
+        <text x="5" y="90" font-size="10" fill="#555">40</text>
+        <text x="5" y="50" font-size="10" fill="#555">60</text>
+        <text x="5" y="15" font-size="10" fill="#555">80</text>
+        <!-- Y gridlines -->
+        <line x1="50" y1="130" x2="545" y2="130" stroke="#ddd" stroke-width="1"/>
+        <line x1="50" y1="90" x2="545" y2="90" stroke="#ddd" stroke-width="1"/>
+        <line x1="50" y1="50" x2="545" y2="50" stroke="#ddd" stroke-width="1"/>
+        <!-- X axis labels -->
+        <text x="50" y="180" font-size="9" fill="#555">2021</text>
+        <text x="155" y="180" font-size="9" fill="#555">2022</text>
+        <text x="260" y="180" font-size="9" fill="#555">2023</text>
+        <text x="365" y="180" font-size="9" fill="#555">2024</text>
+        <text x="470" y="180" font-size="9" fill="#555">2025</text>
+        <!-- War marker -->
+        <line x1="185" y1="10" x2="185" y2="165" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="188" y="22" font-size="9" fill="#c0392b" font-weight="bold">War starts</text>
+        <!-- Gas price line (approximate from PDF data) -->
+        <polyline points="
+            55,158 64,156 73,152 82,148 91,143 100,138
+            110,130 119,120 128,108 137,95 146,80
+            155,62 164,42 173,28 182,18 191,14
+            200,20 209,30 218,40 227,52 236,60
+            245,68 254,72 263,75 272,78 281,80
+            290,120 299,130 308,135 317,138 326,140
+            335,142 344,143 353,144 362,145 371,146
+            380,143 389,140 398,138 407,136 416,135
+            425,132 434,130 443,128 452,127 461,126
+            470,124 479,122 488,120 497,119 506,118
+        " fill="none" stroke="#1a5276" stroke-width="2.5" stroke-linejoin="round"/>
+        <text x="52" y="195" font-size="9" fill="#888">Source: World Bank Commodity Price Data</text>
+    </svg>
+    <p style="font-size:0.85em;color:#555;">Notice the massive spike in 2022 – this is when Russia reduced gas supplies to Europe</p>
+</div>
+
+<!-- Rapeseed Oil Chart -->
+<div class="diagram-box">
+    <h3 style="color:#8B4513; margin-bottom:10px;">📊 Rapeseed Oil ($/mt) – 2021 to 2026</h3>
+    <svg width="100%" height="200" viewBox="0 0 560 200" preserveAspectRatio="xMidYMid meet">
+        <line x1="50" y1="10" x2="50" y2="165" stroke="#333" stroke-width="2"/>
+        <line x1="50" y1="165" x2="545" y2="165" stroke="#333" stroke-width="2"/>
+        <text x="0" y="170" font-size="10" fill="#555">0</text>
+        <text x="0" y="130" font-size="10" fill="#555">500</text>
+        <text x="0" y="90" font-size="10" fill="#555">1000</text>
+        <text x="0" y="50" font-size="10" fill="#555">1500</text>
+        <text x="0" y="15" font-size="10" fill="#555">2000</text>
+        <line x1="50" y1="130" x2="545" y2="130" stroke="#ddd" stroke-width="1"/>
+        <line x1="50" y1="90" x2="545" y2="90" stroke="#ddd" stroke-width="1"/>
+        <line x1="50" y1="50" x2="545" y2="50" stroke="#ddd" stroke-width="1"/>
+        <text x="50" y="180" font-size="9" fill="#555">2021</text>
+        <text x="155" y="180" font-size="9" fill="#555">2022</text>
+        <text x="260" y="180" font-size="9" fill="#555">2023</text>
+        <text x="365" y="180" font-size="9" fill="#555">2024</text>
+        <text x="470" y="180" font-size="9" fill="#555">2025</text>
+        <line x1="185" y1="10" x2="185" y2="165" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="188" y="22" font-size="9" fill="#c0392b" font-weight="bold">War starts</text>
+        <!-- Rapeseed approximate data -->
+        <polyline points="
+            55,130 64,125 73,118 82,110 91,100
+            100,92 110,82 119,68 128,55 137,46
+            146,38 155,30 164,22 173,18 182,16
+            191,20 200,30 209,42 218,55 227,68
+            236,80 245,92 254,102 263,110 272,118
+            281,124 290,128 299,130 308,132 317,133
+            326,134 335,135 344,136 353,137 362,138
+            371,138 380,137 389,136 398,135 407,134
+            416,133 425,132 434,131 443,130 452,130
+            461,130 470,129 479,129 488,129 497,129
+        " fill="none" stroke="#27ae60" stroke-width="2.5" stroke-linejoin="round"/>
+        <text x="52" y="195" font-size="9" fill="#888">Source: World Bank Commodity Price Data</text>
+    </svg>
+    <p style="font-size:0.85em;color:#555;">Rapeseed oil prices rose as demand increased – people switched FROM expensive sunflower oil</p>
+</div>
+
+<!-- Sunflower Oil Chart -->
+<div class="diagram-box">
+    <h3 style="color:#8B4513; margin-bottom:10px;">📊 Sunflower Oil ($/mt) – 2021 to 2026</h3>
+    <svg width="100%" height="200" viewBox="0 0 560 200" preserveAspectRatio="xMidYMid meet">
+        <line x1="50" y1="10" x2="50" y2="165" stroke="#333" stroke-width="2"/>
+        <line x1="50" y1="165" x2="545" y2="165" stroke="#333" stroke-width="2"/>
+        <text x="0" y="170" font-size="10" fill="#555">0</text>
+        <text x="0" y="130" font-size="10" fill="#555">500</text>
+        <text x="0" y="90" font-size="10" fill="#555">1000</text>
+        <text x="0" y="50" font-size="10" fill="#555">1500</text>
+        <text x="0" y="15" font-size="10" fill="#555">2000</text>
+        <line x1="50" y1="130" x2="545" y2="130" stroke="#ddd" stroke-width="1"/>
+        <line x1="50" y1="90" x2="545" y2="90" stroke="#ddd" stroke-width="1"/>
+        <line x1="50" y1="50" x2="545" y2="50" stroke="#ddd" stroke-width="1"/>
+        <text x="50" y="180" font-size="9" fill="#555">2021</text>
+        <text x="155" y="180" font-size="9" fill="#555">2022</text>
+        <text x="260" y="180" font-size="9" fill="#555">2023</text>
+        <text x="365" y="180" font-size="9" fill="#555">2024</text>
+        <text x="470" y="180" font-size="9" fill="#555">2025</text>
+        <line x1="185" y1="10" x2="185" y2="165" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="188" y="22" font-size="9" fill="#c0392b" font-weight="bold">War starts</text>
+        <!-- Sunflower approximate data -->
+        <polyline points="
+            55,128 64,122 73,114 82,104 91,92
+            100,80 110,65 119,50 128,35 137,24
+            146,16 155,13 164,16 173,24 182,18
+            191,14 200,22 209,36 218,52 227,70
+            236,88 245,105 254,118 263,128 272,135
+            281,140 290,143 299,145 308,146 317,147
+            326,148 335,148 344,148 353,148 362,148
+            371,147 380,146 389,145 398,144 407,143
+            416,142 425,141 434,140 443,139 452,138
+            461,137 470,136 479,135 488,134 497,134
+        " fill="none" stroke="#e67e22" stroke-width="2.5" stroke-linejoin="round"/>
+        <text x="52" y="195" font-size="9" fill="#888">Source: World Bank Commodity Price Data</text>
+    </svg>
+    <p style="font-size:0.85em;color:#555;">Sunflower oil saw the BIGGEST spike – Ukraine is a major sunflower producer and supply was severely disrupted</p>
+</div>
+
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show the Main Reason for Price Swings</button>
+<div class="answer-content">
+    <strong>The main reason: The War in Ukraine (February 2022)</strong><br><br>
+    Russia invaded Ukraine in February 2022. This had massive effects on commodity prices in Europe because:<br><br>
+    🔥 <strong>Natural Gas:</strong> Russia supplied a large proportion of Europe's gas. War → sanctions and supply disruptions → European gas supply fell sharply → prices surged.<br><br>
+    🌻 <strong>Sunflower Oil:</strong> Ukraine is one of the world's largest producers of sunflowers. War disrupted farming and exports → sunflower oil supply fell → prices shot up.<br><br>
+    🌱 <strong>Rapeseed Oil:</strong> As sunflower oil became scarce and expensive, consumers and food producers switched to rapeseed oil as a substitute → demand for rapeseed oil increased → rapeseed oil prices also rose.
+</div>
+
+<h3>How to Connect This to Supply & Demand Diagrams:</h3>
+
+<!-- Natural Gas -->
+<div class="question-box">
+    <span class="q-label">Natural Gas, Europe</span><br>
+    Big price spike visible around early 2022. How does this show on a supply & demand diagram?
+</div>
+<div class="steps-box">
+    <h3>🪜 Step-by-Step Thinking:</h3>
+    <div class="step"><span class="step-number">1</span> What changed? → Russian gas supplies to Europe were CUT (reduced)</div>
+    <div class="step"><span class="step-number">2</span> This affects SUPPLY → less gas available at every price</div>
+    <div class="step"><span class="step-number">3</span> Supply curve shifts LEFT → at same demand, price rises</div>
+    <div class="step"><span class="step-number">4</span> This matches what we see in the data – prices surged in 2021-2022!</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Full Explanation – Natural Gas</button>
+<div class="answer-content">
+    <strong>Diagram explanation:</strong><br>
+    The supply curve for European natural gas shifted <strong>LEFT</strong> (supply decreased) because Russia reduced gas exports to Europe due to war and sanctions.<br><br>
+    With demand roughly unchanged but supply falling, the equilibrium price rose sharply. On the diagram: supply curve moves left → intersection with demand curve moves up the demand curve → higher price, lower quantity.<br><br>
+    <strong>This is why European energy bills skyrocketed in 2022!</strong>
+    <!-- Natural Gas S&D Diagram -->
+    <div style="text-align:center; margin-top:15px;">
+    <svg width="280" height="200" viewBox="0 0 280 200">
+        <line x1="40" y1="10" x2="40" y2="170" stroke="#333" stroke-width="2"/>
+        <line x1="40" y1="170" x2="270" y2="170" stroke="#333" stroke-width="2"/>
+        <text x="5" y="90" font-size="11" fill="#333" transform="rotate(-90,10,90)">Price</text>
+        <text x="230" y="185" font-size="11" fill="#333">Qty</text>
+        <!-- Demand curve (stable) -->
+        <line x1="60" y1="20" x2="240" y2="160" stroke="#1a5276" stroke-width="2"/>
+        <text x="242" y="158" font-size="11" fill="#1a5276" font-weight="bold">D</text>
+        <!-- S1 original supply -->
+        <line x1="60" y1="160" x2="200" y2="20" stroke="#e67e22" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="202" y="18" font-size="11" fill="#e67e22" font-weight="bold">S1</text>
+        <!-- S2 new supply (shifted left) -->
+        <line x1="40" y1="140" x2="150" y2="20" stroke="#c0392b" stroke-width="2.5"/>
+        <text x="152" y="18" font-size="11" fill="#c0392b" font-weight="bold">S2</text>
+        <!-- Arrow showing shift -->
+        <text x="95" y="75" font-size="18" fill="#c0392b">←</text>
+        <!-- Old equilibrium - exact intersection D∩S1 -->
+        <circle cx="139" cy="81" r="5" fill="#e67e22"/>
+        <line x1="40" y1="81" x2="139" y2="81" stroke="#e67e22" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="42" y="78" font-size="10" fill="#e67e22">P1</text>
+        <!-- New equilibrium - exact intersection D∩S2 -->
+        <circle cx="113" cy="61" r="5" fill="#c0392b"/>
+        <line x1="40" y1="61" x2="113" y2="61" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="42" y="58" font-size="10" fill="#c0392b">P2↑</text>
+        <text x="80" y="195" font-size="10" fill="#555">Supply shifts LEFT → Price rises</text>
+    </svg>
+    </div>
+</div>
+
+<!-- Sunflower Oil -->
+<div class="question-box">
+    <span class="q-label">Sunflower Oil</span><br>
+    Prices rose sharply from early 2022. How does this show on a supply & demand diagram?
+</div>
+<div class="steps-box">
+    <h3>🪜 Step-by-Step Thinking:</h3>
+    <div class="step"><span class="step-number">1</span> Ukraine is a huge sunflower producer. War disrupted farming and exports</div>
+    <div class="step"><span class="step-number">2</span> This affects SUPPLY of sunflower oil → supply falls → curve shifts LEFT</div>
+    <div class="step"><span class="step-number">3</span> Less supply at same demand → price rises</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Full Explanation – Sunflower Oil</button>
+<div class="answer-content">
+    <strong>Diagram explanation:</strong><br>
+    The supply curve for sunflower oil shifted <strong>LEFT</strong> because Ukrainian sunflower production and exports were severely disrupted by the war. This reduced global supply, pushing prices up dramatically.<br><br>
+    On the diagram: supply shifts left → new equilibrium has a higher price and lower quantity traded.
+    <!-- Sunflower Oil S&D Diagram -->
+    <div style="text-align:center; margin-top:15px;">
+    <svg width="280" height="200" viewBox="0 0 280 200">
+        <line x1="40" y1="10" x2="40" y2="170" stroke="#333" stroke-width="2"/>
+        <line x1="40" y1="170" x2="270" y2="170" stroke="#333" stroke-width="2"/>
+        <text x="5" y="90" font-size="11" fill="#333" transform="rotate(-90,10,90)">Price</text>
+        <text x="230" y="185" font-size="11" fill="#333">Qty</text>
+        <!-- Demand -->
+        <line x1="60" y1="20" x2="240" y2="160" stroke="#1a5276" stroke-width="2"/>
+        <text x="242" y="158" font-size="11" fill="#1a5276" font-weight="bold">D</text>
+        <!-- S1 original -->
+        <line x1="60" y1="160" x2="200" y2="20" stroke="#e67e22" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="202" y="18" font-size="11" fill="#e67e22" font-weight="bold">S1</text>
+        <!-- S2 shifted left -->
+        <line x1="40" y1="140" x2="150" y2="20" stroke="#c0392b" stroke-width="2.5"/>
+        <text x="152" y="18" font-size="11" fill="#c0392b" font-weight="bold">S2</text>
+        <text x="95" y="75" font-size="18" fill="#c0392b">←</text>
+        <!-- Old equilibrium - exact intersection D∩S1 -->
+        <circle cx="139" cy="81" r="5" fill="#e67e22"/>
+        <line x1="40" y1="81" x2="139" y2="81" stroke="#e67e22" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="42" y="78" font-size="10" fill="#e67e22">P1</text>
+        <!-- New equilibrium - exact intersection D∩S2 -->
+        <circle cx="113" cy="61" r="5" fill="#c0392b"/>
+        <line x1="40" y1="61" x2="113" y2="61" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="42" y="58" font-size="10" fill="#c0392b">P2↑</text>
+        <text x="55" y="195" font-size="10" fill="#555">Ukraine war → Supply falls → Price rises</text>
+    </svg>
+    </div>
+</div>
+
+<!-- Rapeseed Oil -->
+<div class="question-box">
+    <span class="q-label">Rapeseed Oil</span><br>
+    Rapeseed oil prices ALSO rose, even though rapeseed is not mainly from Ukraine. Why?
+</div>
+<div class="steps-box">
+    <h3>🪜 Step-by-Step Thinking:</h3>
+    <div class="step"><span class="step-number">1</span> Ask: what is rapeseed oil's relationship to sunflower oil?</div>
+    <div class="step"><span class="step-number">2</span> They are SUBSTITUTES – both used for cooking oil</div>
+    <div class="step"><span class="step-number">3</span> Sunflower oil got expensive → consumers and food makers switched to rapeseed oil</div>
+    <div class="step"><span class="step-number">4</span> More people wanting rapeseed oil → DEMAND increases → price rises even though supply unchanged!</div>
+</div>
+<button class="answer-toggle" onclick="toggleAnswer(this)">✅ Show Full Explanation – Rapeseed Oil</button>
+<div class="answer-content">
+    <strong>Diagram explanation:</strong><br>
+    The DEMAND curve for rapeseed oil shifted <strong>RIGHT</strong> because sunflower oil (a substitute) became much more expensive. Consumers and food producers switched to rapeseed oil instead.<br><br>
+    Even though the supply of rapeseed oil did not change, the increased demand pushed the price up. On the diagram: demand shifts right → new equilibrium has a higher price and higher quantity.<br><br>
+    <strong>Key concept:</strong> The price of a substitute good affects demand for the other good. When sunflower oil price rises → demand for rapeseed oil rises → rapeseed oil price rises too.
+    <!-- Rapeseed Oil S&D Diagram -->
+    <div style="text-align:center; margin-top:15px;">
+    <svg width="280" height="200" viewBox="0 0 280 200">
+        <line x1="40" y1="10" x2="40" y2="170" stroke="#333" stroke-width="2"/>
+        <line x1="40" y1="170" x2="270" y2="170" stroke="#333" stroke-width="2"/>
+        <text x="5" y="90" font-size="11" fill="#333" transform="rotate(-90,10,90)">Price</text>
+        <text x="230" y="185" font-size="11" fill="#333">Qty</text>
+        <!-- Supply (unchanged) -->
+        <line x1="60" y1="160" x2="220" y2="20" stroke="#27ae60" stroke-width="2"/>
+        <text x="222" y="18" font-size="11" fill="#27ae60" font-weight="bold">S</text>
+        <!-- D1 original demand -->
+        <line x1="50" y1="20" x2="220" y2="155" stroke="#1a5276" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="222" y="155" font-size="11" fill="#1a5276" font-weight="bold">D1</text>
+        <!-- D2 shifted right -->
+        <line x1="90" y1="20" x2="260" y2="155" stroke="#c0392b" stroke-width="2.5"/>
+        <text x="253" y="130" font-size="11" fill="#c0392b" font-weight="bold">D2</text>
+        <text x="155" y="100" font-size="18" fill="#c0392b">→</text>
+        <!-- Old equilibrium - exact intersection S∩D1 -->
+        <circle cx="139" cy="91" r="5" fill="#1a5276"/>
+        <line x1="40" y1="91" x2="139" y2="91" stroke="#1a5276" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="42" y="88" font-size="10" fill="#1a5276">P1</text>
+        <!-- New equilibrium - exact intersection S∩D2 -->
+        <circle cx="158" cy="74" r="5" fill="#c0392b"/>
+        <line x1="40" y1="74" x2="158" y2="74" stroke="#c0392b" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="42" y="71" font-size="10" fill="#c0392b">P2↑</text>
+        <text x="45" y="195" font-size="10" fill="#555">Sunflower costly → Demand for rapeseed rises → Price rises</text>
+    </svg>
+    </div>
+</div>
+```
+
+</div>
+
+<!-- SLIDE 4: Key Rules Summary -->
+
+<div class="slide">
+    <h1>📋 Summary – Key Rules to Remember</h1>
+
+```
+<div class="simple-box">
+    <strong>🔑 The Most Important Rule of All:</strong><br>
+    Always ask yourself first: <span class="highlight">Does this change affect BUYERS or SELLERS?</span><br>
+    Buyers → affects DEMAND | Sellers → affects SUPPLY
+</div>
+
+<h3>📉 Demand – When Does the Curve SHIFT?</h3>
+<div class="steps-box">
+    <h3>These things SHIFT the demand curve:</h3>
+    <div class="step">💰 <strong>Income changes</strong> – more income = more demand for normal goods (right shift)</div>
+    <div class="step">👅 <strong>Tastes/Preferences</strong> – more popular = demand shifts right</div>
+    <div class="step">🔄 <strong>Price of substitutes</strong> – substitute gets expensive = demand shifts right</div>
+    <div class="step">🔗 <strong>Price of complements</strong> – complement gets expensive = demand shifts left</div>
+    <div class="step">📢 <strong>Advertising</strong> – successful campaign = demand shifts right</div>
+</div>
+
+<div class="warning-box">
+    <strong>⚠️ This does NOT shift the demand curve:</strong><br>
+    A change in the PRICE of the good itself → this is a MOVEMENT along the curve, not a shift!
+</div>
+
+<h3>📈 Supply – When Does the Curve SHIFT?</h3>
+<div class="steps-box">
+    <h3>These things SHIFT the supply curve:</h3>
+    <div class="step">💸 <strong>Production costs rise</strong> (e.g. taxes, wages, raw materials) → supply shifts LEFT</div>
+    <div class="step">🌦️ <strong>Bad weather</strong> (for farming) → supply shifts LEFT</div>
+    <div class="step">⚙️ <strong>Better technology</strong> → supply shifts RIGHT (can produce more efficiently)</div>
+    <div class="step">🔄 <strong>Price of related goods in production</strong> → if other product more profitable, farmers switch</div>
+    <div class="step">📢 <strong>Advertising</strong> → affects DEMAND not supply – supply stays the same!</div>
+</div>
+
+<div class="warning-box">
+    <strong>⚠️ This does NOT shift the supply curve:</strong><br>
+    A change in the PRICE of the good itself → this is a MOVEMENT along the curve, not a shift!
+</div>
+
+<h3>↔️ Left vs Right – Which Way Does the Curve Move?</h3>
+<div class="diagram-box">
+    <table style="width:100%; border-collapse:collapse; font-size:1em;">
+        <tr>
+            <th style="background:#CD853F;color:white;padding:10px;border:2px solid #8B4513;">Situation</th>
+            <th style="background:#CD853F;color:white;padding:10px;border:2px solid #8B4513;">Direction</th>
+            <th style="background:#CD853F;color:white;padding:10px;border:2px solid #8B4513;">Effect on Price</th>
+        </tr>
+        <tr><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">Demand increases</td><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">➡️ Right</td><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">Price rises ↑</td></tr>
+        <tr><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">Demand decreases</td><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">⬅️ Left</td><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">Price falls ↓</td></tr>
+        <tr><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">Supply increases</td><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">➡️ Right</td><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">Price falls ↓</td></tr>
+        <tr><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">Supply decreases</td><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">⬅️ Left</td><td style="background:#FFF8DC;padding:9px;border:2px solid #8B4513;">Price rises ↑</td></tr>
+    </table>
+</div>
+
+<div class="steps-box">
+    <h3>🎯 Quick Checklist for Every Question:</h3>
+    <div class="step"><span class="step-number">1</span> What is changing in the question?</div>
+    <div class="step"><span class="step-number">2</span> Does it affect BUYERS (demand) or SELLERS (supply)?</div>
+    <div class="step"><span class="step-number">3</span> Is it a price change (movement) or something else (shift)?</div>
+    <div class="step"><span class="step-number">4</span> If shift – does it go LEFT (decrease) or RIGHT (increase)?</div>
+    <div class="step"><span class="step-number">5</span> Which point on the diagram does this take us to?</div>
+</div>
+```
+
+</div><!-- end last slide -->
+
+<!-- Navigation -->
+
+<div class="navigation">
+    <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+    <div class="progress">
+        <span id="slideNumber">1</span> / <span id="totalSlides">4</span>
+    </div>
+    <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+</div>
+
+</div><!-- end container -->
+<script>
+    let currentSlide = 1;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+```
+document.getElementById('totalSlides').textContent = totalSlides;
+
+function showSlide(n) {
+    if (n < 1) n = 1;
+    if (n > totalSlides) n = totalSlides;
+    currentSlide = n;
+    slides.forEach(function(s) { s.classList.remove('active'); });
+    slides[currentSlide - 1].classList.add('active');
+    document.getElementById('slideNumber').textContent = currentSlide;
+    document.getElementById('prevBtn').disabled = (currentSlide === 1);
+    document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+    window.scrollTo(0, 0);
+}
+
+function changeSlide(dir) {
+    showSlide(currentSlide + dir);
+}
+
+function toggleAnswer(btn) {
+    const content = btn.nextElementSibling;
+    content.classList.toggle('show');
+    if (content.classList.contains('show')) {
+        btn.textContent = '🙈 Hide Answer';
+    } else {
+        btn.textContent = btn.getAttribute('data-label');
+    }
+}
+
+document.querySelectorAll('.answer-toggle').forEach(function(btn) {
+    btn.setAttribute('data-label', btn.textContent);
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') changeSlide(-1);
+    else if (e.key === 'ArrowRight') changeSlide(1);
+});
+
+showSlide(1);
+```
+
+</script>
+</body>
+</html>
